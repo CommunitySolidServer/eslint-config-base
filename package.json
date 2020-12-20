@@ -1,0 +1,40 @@
+{
+  "name": "@solid/eslint-base-config",
+  "version": "0.1.0",
+  "description": "Solid defaults for eslinting.",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "configuration",
+    "coding convention"
+  ],
+  "contributors": [
+    "Jack Lawson (http://www.thejacklawson.com)",
+    "Joachim Van Herwegen <joachim.vanherwegen@ugent.be> (https://github.com/joachimvh)",
+    "Matthieu Bosquet <matthieu@cognithive.com> (https://github.com/matthieubosquet/)",
+    "Ruben Taelman <ruben.taelman@ugent.be> (https://www.rubensworks.net/)",
+    "Ruben Verborgh <ruben.verborgh@ugent.be> (https://ruben.verborgh.org/)"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solid/eslint-base-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/solid/eslint-base-config/issues"
+  },
+  "homepage": "https://github.com/solid/eslint-base-config#readme",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.3.0"
+  }
+}
