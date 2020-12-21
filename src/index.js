@@ -44,7 +44,7 @@ module.exports = {
   /**
    * Ignore files and directories
    */
-  ignorePatterns: ["**/dist/**/*", "**/coverage/**/*"],
+  ignorePatterns: [ "**/dist/**/*", "**/coverage/**/*" ],
 
   /**
    * Specify modules directories
@@ -54,8 +54,8 @@ module.exports = {
   settings: {
     "import/resolver": {
       node: {
-        extensions: [".js", ".ts"],
-        paths: ["node_modules/", "node_modules/@types"],
+        extensions: [ ".js", ".ts" ],
+        paths: [ "node_modules/", "node_modules/@types" ],
       },
     },
   },
@@ -66,7 +66,7 @@ module.exports = {
    * See also: https://eslint.org/docs/user-guide/configuring#specifying-parser-options
    */
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: "module",
   },
 
@@ -93,7 +93,7 @@ module.exports = {
      *
      * See also: https://eslint.org/docs/rules/multiline-comment-style#enforce-a-particular-style-for-multiline-comments-multiline-comment-style
      */
-    "multiline-comment-style": ["error", "starred-block"],
+    "multiline-comment-style": [ "error", "starred-block" ],
 
     /**
      * Syntax restrictions
@@ -141,7 +141,7 @@ module.exports = {
      *
      * See also: https://eslint.org/docs/rules/no-shadow
      */
-    "no-shadow": ["error", { builtinGlobals: true }],
+    "no-shadow": [ "error", { builtinGlobals: true } ],
 
     // ES6+ export/imports
     /**
@@ -183,7 +183,7 @@ module.exports = {
     "import/no-extraneous-dependencies": [
       "error",
       {
-        devDependencies: ["**/*.test.*", "**/test/**/*.*"],
+        devDependencies: [ "**/*.test.*", "**/test/**/*.*" ],
       },
     ],
 
@@ -209,17 +209,19 @@ module.exports = {
    */
   overrides: [
     {
-      env: {
-        es6: true,
-        node: true,
-      },
-      files: ["*.ts", "*.tsx"],
+      files: [ "*.ts", "*.tsx" ],
+
+      /**
+       * Base parser configuration on tsconfig.json files
+       * 
+       * See also: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/parser/README.md#configuration
+       */
       parser: "@typescript-eslint/parser",
       parserOptions: {
+        tsconfigRootDir: __dirname,
         project: [ './tsconfig.json', './test/tsconfig.json' ],
-        ecmaVersion: 2018,
-        sourceType: "module",
       },
+
       /**
        * Extends (overrides in order of extension):
        * - TypeScript recommended+type checking+prettier https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/src/configs
@@ -254,29 +256,29 @@ module.exports = {
           "error",
           {
             selector: "default",
-            format: ["camelCase"],
+            format: [ "camelCase" ],
             leadingUnderscore: "forbid",
             trailingUnderscore: "forbid",
           },
           {
             selector: "memberLike",
-            format: ["camelCase", "snake_case"],
+            format: [ "camelCase", "snake_case" ],
             leadingUnderscore: "forbid",
             trailingUnderscore: "forbid",
           },
           {
             selector: "variable",
-            format: ["camelCase", "UPPER_CASE"],
+            format: [ "camelCase", "UPPER_CASE" ],
             leadingUnderscore: "forbid",
             trailingUnderscore: "forbid",
           },
           {
             selector: "typeLike",
-            format: ["PascalCase"],
+            format: [ "PascalCase" ],
           },
           {
-            selector: ["typeParameter"],
-            format: ["PascalCase"],
+            selector: [ "typeParameter" ],
+            format: [ "PascalCase" ],
             custom: {
               regex: "^[T,K,P]$",
               match: true,
@@ -293,7 +295,7 @@ module.exports = {
          */
         "@typescript-eslint/no-empty-function": [
           "error",
-          { allow: ["arrowFunctions"] },
+          { allow: [ "arrowFunctions" ] },
         ],
 
         /**
@@ -308,7 +310,7 @@ module.exports = {
          *
          * See also: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md
          */
-        "no-return-await": ["off"],
+        "no-return-await": [ "off" ],
         "@typescript-eslint/return-await": "error",
 
         /**
