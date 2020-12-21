@@ -5,7 +5,7 @@ All notable changes to this project are documented in this file.
 ## [v0.1.4-alpha](https://github.com/solid/eslint-config-base/compare/v0.1.3-alpha...v0.1.4-alpha) - 2020-12-21
 
 ### Added
-* [Feat: Added changelog]()
+* [Feat: Added changelog](https://github.com/solid/eslint-config-base/commit/ba434e0401294b7e1b3a021fd78330354a2e916d)
 
 ### Fixed
 * [Fix: TypeScript linting how to](https://github.com/solid/eslint-config-base/commit/ebc3555bd4c3a0d37771f40a1ba3984b4dc7406e)
