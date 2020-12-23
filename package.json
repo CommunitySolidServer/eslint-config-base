@@ -1,6 +1,6 @@
 {
   "name": "@solid/eslint-config-base",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Solid defaults for eslinting.",
   "license": "MIT",
   "keywords": [
