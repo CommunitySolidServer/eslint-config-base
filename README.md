@@ -9,7 +9,7 @@ Solid defaults for eslinting.
    npm install --save-dev @solid/eslint-config-base
    npx install-peerdeps -D @solid/eslint-config-base
    ```
-2. Create `.eslintrc.js` extending base configuration
+2. Create `.eslintrc.js` file extending `@solid/eslint-config-base`
    ```bash
    printf 'module.exports = {\n  extends: [ "@solid/eslint-config-base" ]\n};\n' > .eslintrc.js
    ```
@@ -19,31 +19,20 @@ Solid defaults for eslinting.
 
 ### Requirements
 
-Requires both `'./tsconfig.json'` and `'./test/tsconfig.json'`.
+TypeScript configuration files need to match the `./**/tsconfig.*json` glob pattern adopted by `@solid/eslint-config-base`.
 
-Create a simple tests TypeScript configuration extending from the base one:
-```json
-{
-   "extends": "../tsconfig.json",
-   "include": [
-      "."
-   ]
-}
-```
+All TypeScript files must be included in a `tsconfig` file.
 
 ### A common error
 
-Why is `'./test/tsconfig.json'` required?
-
-1. We use `'./tsconfig.json'` which should not include the `test` directory for [parser options](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/parser/README.md#configuration).
-2. The `@typescript-eslint/parser` needs to know how to parse all TypeScript files.
-3. Without a TypeScript configuration for tests linting will error:
+1. A common error is missing a `tsconfig.json` file that includes test files
    ```bash
    Parsing error: "parserOptions.project" has been set for @typescript-eslint/parser.
    The file does not match your project config: <TEST_FILE>
    The file must be included in at least one of the projects provided.
    ```
-
-Therefore `@typescript-eslint/parser`'s project parser options has `'./tsconfig.json'` and `'./test/tsconfig.json'`.
-
-Linting will error if `'./test/tsconfig.json'` is missing from a TypeScript project using `@solid/eslint-config-base`.
+3. The `@solid/eslint-config-base` uses a glob pattern `./**/tsconfig.*json` in its [parser options](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/parser/README.md#configuration)
+4. Create a simple TypeScript configuration file `tsconfig.test.json` that extends the main `tsconfig.json` and includes in the `test` folder:
+   ```bash
+   printf '{\n  "extends": "./tsconfig.json",\n  "include": [ "test" ]\n}\n' > tsconfig.test.json
+   ```
