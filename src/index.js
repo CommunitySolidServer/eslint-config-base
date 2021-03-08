@@ -17,7 +17,6 @@ module.exports = {
    * - ESLint recommended https://eslint.org/docs/rules/
    * - Airbnb base https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base
    * - ES6+ export/imports https://github.com/benmosher/eslint-plugin-import/tree/master/config
-   * - Jest https://github.com/jest-community/eslint-plugin-jest#rules
    * - Prettier https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
    */
   extends: [
@@ -26,8 +25,6 @@ module.exports = {
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "plugin:jest/recommended",
-    "plugin:jest/style",
     "plugin:prettier/recommended",
   ],
 
@@ -319,6 +316,18 @@ module.exports = {
          */
         "@typescript-eslint/no-unused-vars": "error",
       },
+    },
+    {
+      files: [ "*.test.ts", "*.test.js" ],
+
+      /**
+       * Extends (overrides in order of extension):
+       * - Jest https://github.com/jest-community/eslint-plugin-jest#rules
+       */
+      extends: [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+      ],
     },
   ],
 };
