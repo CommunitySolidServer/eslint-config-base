@@ -1,6 +1,6 @@
 {
   "name": "@solid/eslint-config-base",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Solid defaults for eslinting.",
   "license": "MIT",
   "keywords": [
@@ -35,7 +35,7 @@
     "@typescript-eslint/parser": "4.x",
     "eslint": "7.x",
     "eslint-config-airbnb-base": "14.x",
-    "eslint-config-prettier": "7.x",
+    "eslint-config-prettier": "8.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jest": "24.x",
     "eslint-plugin-prettier": "3.x"
