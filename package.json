@@ -1,6 +1,6 @@
 {
   "name": "@solid/eslint-config-base",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Solid defaults for eslinting.",
   "license": "MIT",
   "keywords": [
@@ -38,6 +38,6 @@
     "eslint-config-prettier": "8.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jest": "24.x",
-    "eslint-plugin-prettier": "3.x"
+    "eslint-plugin-prettier": "4.x"
   }
 }
