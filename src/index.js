@@ -79,11 +79,19 @@ module.exports = {
     /**
      * Camel case
      *
-     * Override Airbnb's config to accomodate for json objects that might have snake case fields
+     * 1. Override Airbnb's config to accomodate for json objects that might have snake case fields
+     * 2. Explicitly allow the RDF/JS Quad_* types
      *
      * See also: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base
      */
-    camelcase: "warn",
+    camelcase: [
+      "warn",
+      {
+        "allow": [
+          "Quad_*"
+        ]
+      }
+    ],
 
     /**
      * Comments
@@ -210,7 +218,7 @@ module.exports = {
 
       /**
        * Base parser configuration on tsconfig.json files
-       * 
+       *
        * See also: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/parser/README.md#configuration
        */
       parser: "@typescript-eslint/parser",
